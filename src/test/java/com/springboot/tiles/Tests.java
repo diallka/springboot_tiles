@@ -1,4 +1,4 @@
-package com.barryku.springboot;
+package com.springboot.tiles;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +11,7 @@ import com.springboot.tiles.StartApplication;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = StartApplication.class)
 @WebAppConfiguration
-public class SpringBootTilesApplicationTests {
+public class Tests {
 
 	@Test
 	public void contextLoads() {
