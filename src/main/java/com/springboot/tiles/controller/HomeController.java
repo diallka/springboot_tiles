@@ -12,7 +12,13 @@ public class HomeController {
 
     @RequestMapping( "/" )
     public String welcome( final Map< String , Object > model ) {
-        model.put( "message", "Bienvenue Spring boot et tiles" );
+        model.put( "message", "Bienvenue Spring boot et tiles, accédez à d'autres rubriques Bientot ..." );
         return "home";
+    }
+
+    @RequestMapping( "/test" )
+    public String test() {
+
+        return "test";
     }
 }
