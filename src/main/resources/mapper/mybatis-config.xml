@@ -3,8 +3,8 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-    <mappers>     
-        <!-- On rajoute le chemin de notre mapping dans le fichier de configuration mybatis -->
-        <mapper resource ="/mapper/login-mapper.xml"/>
+    <mappers>
+        <mapper resource ="mapper/user/data-mapper.xml"/>
+        <mapper resource ="mapper/user/login-mapper.xml"/>
     </mappers>
 </configuration>

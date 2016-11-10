@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 @EnableWebMvc
 @Configuration
 @ComponentScan( basePackages = "com.springboot" )
-public class AppConfiguration extends WebMvcConfigurerAdapter {
+public class WebConfig extends WebMvcConfigurerAdapter {
 
     //Configuration tiles *********************************************************
     @Bean
@@ -43,4 +43,19 @@ public class AppConfiguration extends WebMvcConfigurerAdapter {
         registry.addResourceHandler( "/static/**" ).addResourceLocations( "/static/" );
     }
 
+    //************************************************************************
+    //    @Bean( name = "simpleMappingExceptionResolver" )
+    //    public SimpleMappingExceptionResolver createSimpleMappingExceptionResolver() {
+    //        final SimpleMappingExceptionResolver r = new SimpleMappingExceptionResolver();
+    //
+    //        final Properties mappings = new Properties();
+    //        mappings.setProperty( "DatabaseException", "databaseError" );
+    //        mappings.setProperty( "InvalidCreditCardException", "creditCardError" );
+    //
+    //        r.setExceptionMappings( mappings );  // None by default
+    //        r.setDefaultErrorView( "error" );    // No default
+    //        r.setExceptionAttribute( "ex" );     // Default is "exception"
+    //        r.setWarnLogCategory( "example.MvcLogger" );     // No default
+    //        return r;
+    //    }
 }

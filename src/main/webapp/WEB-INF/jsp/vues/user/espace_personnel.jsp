@@ -21,6 +21,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"></div>
+                                    ${message}
                                     <div>Connectés !</div>
                                 </div>
                             </div>
