@@ -20,8 +20,7 @@
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"></div>
-                                    ${message}
+                                    <div class="huge">${nbr}</div>
                                     <div>Connectés !</div>
                                 </div>
                             </div>

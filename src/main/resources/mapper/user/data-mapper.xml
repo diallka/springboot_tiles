@@ -2,18 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
-
-<mapper namespace="com.springboot.dao.UserDaoInt">	<!-- On generera automatiquement l'id -->
-
-
-	<select id="findUsers"
-			resultType="User">
-			select *
-			from utilisateur
-			order by nom asc
-	
+<mapper namespace="com.springboot.dao.UserDaoInt">	
+	<select
+		id="findUsers"
+		resultType="hashmap"> <!-- resultType: User/ hashmap/.... -->
+		select *
+		from users u, users_profiles u_p, profiles p
+		where u_p.user_profile_id = p.id;
 	</select>
+	
+	<insert 
+			id="saveUserU" 
+			useGeneratedKeys="true" 
+			keyProperty="id">
+	insert into users (ssoId, password, firstName, lastName, email, age, country, date_inscription, latitude, longitude, state)
+	values (#{ssoId},#{password}, #{firstName}, #{lastName}, #{email}, #{age}, #{country}, now(), #{latitude}, #{longitude}, #{state})
+	</insert>
+	
 	
 <!-- 	<insert id="inserrerUtilisateur"  -->
 <!-- 			useGeneratedKeys="true"  -->
@@ -46,5 +51,5 @@
 <!-- 			from utilisateur -->
 <!-- 			where id=#{id} -->
 <!-- 	</select> -->
-	
+
 </mapper>

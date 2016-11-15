@@ -4,16 +4,15 @@
 
 
 
-<mapper namespace="com.springboot.dao.UserDaoInt">	<!-- On generera automatiquement l'id -->
+<mapper namespace="com.springboot.dao.UserDaoInt">	
 
-	
-	<insert id="saveUser" 
-			useGeneratedKeys="true" 
-			keyProperty="id"
-			parameterType="com.springboot.model.User">
-	insert into utilisateur (nom, prenom, email, login, mdp)
-	values (#{nom}, #{prenom}, #{email}, #{login}, #{mdp})
-	</insert>
-
+	<select
+		id="findBySSO"
+		resultType="User"> <!-- resultType: User/ hashmap.... -->
+		select ssoid, password, type
+		from users u, users_profiles u_p, profiles p
+		where u_p.user_profile_id = p.id 
+		and ssoid = #{ssoId};
+	</select>
 	
 </mapper>

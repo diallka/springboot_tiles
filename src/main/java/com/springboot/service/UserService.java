@@ -16,4 +16,24 @@ public interface UserService {
 
     public void insert( final User u );
 
+    //***************************************
+
+    void save( final User user );
+
+    User findById( final int id );
+
+    User findBySSO( final String ssoId );
+
+    //*************************
+    User getRandom();
+
+    void updateUser( final User user );
+
+    List< User > listUsers();
+
+    List< User > count();
+
+    void removeUser( final int id );
+
+    //*************************
 }

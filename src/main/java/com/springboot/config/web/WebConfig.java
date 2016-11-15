@@ -1,4 +1,4 @@
-package com.springboot.config;
+package com.springboot.config.web;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -11,11 +11,21 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 
+import com.springboot.config.profile.ConversionRoleProfilUser;
+
 @SpringBootApplication
 @EnableWebMvc
 @Configuration
 @ComponentScan( basePackages = "com.springboot" )
 public class WebConfig extends WebMvcConfigurerAdapter {
+
+    //@Autowired
+    ConversionRoleProfilUser roleToUserProfileConverter;
+
+    //    @Override
+    //    public void addFormatters( final FormatterRegistry registry ) {
+    //        registry.addConverter( this.roleToUserProfileConverter );
+    //    }
 
     //Configuration tiles *********************************************************
     @Bean
@@ -58,4 +68,5 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     //        r.setWarnLogCategory( "example.MvcLogger" );     // No default
     //        return r;
     //    }
+
 }
