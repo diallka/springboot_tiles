@@ -1,3 +1,4 @@
 <div id="wrapper">
-Page d'accueil
+Page d'accueil <br/>
+${profiles}
 </div>

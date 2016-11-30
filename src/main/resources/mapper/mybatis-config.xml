@@ -6,5 +6,6 @@
     <mappers>
         <mapper resource ="mapper/user/data-mapper.xml"/>
         <mapper resource ="mapper/user/login-mapper.xml"/>
+        <mapper resource ="mapper/profile/profile-mapper.xml"/>
     </mappers>
 </configuration>

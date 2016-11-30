@@ -1,11 +1,14 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 
 <link href="<c:url value='/static/css/map.css' />" rel="stylesheet"></link>
 
- <div id="map"></div>
+<div id="page-wrapper">
+	<div id="map"></div>
+ 
+</div>
  
    <script>
 			var map;

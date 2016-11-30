@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.dao.ProfileUserDaoInt">	
+	<select
+		id="findAll"
+		resultType="hashmap"> <!-- resultType: User/ hashmap/.... -->
+		select id, type
+		from profiles;
+	</select>
+	
+<!-- 	<select -->
+<!-- 		id="findByType" -->
+<!-- 		resultType="ProfileUser"> resultType: User/ hashmap/.... -->
+<!-- 		select id, type -->
+<!-- 		from profiles -->
+<!-- 		where type=#{type}; -->
+<!-- 	</select> -->
+
+<!-- 	<select -->
+<!-- 		id="findById" -->
+<!-- 		resultType="ProfileUser"> resultType: User/ hashmap/.... -->
+<!-- 		select id, type -->
+<!-- 		from profiles -->
+<!-- 		where type=#{id}; -->
+<!-- 	</select> -->
+</mapper>

@@ -40,6 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return authenticationProvider;
     }
 
+    //A RESOUDRE URGENT...............AJOUT'.' ex: /admin. ---> DONNE ACCES A LA PAGE DONC DONNEES BDD
     @Override
     protected void configure( final HttpSecurity http ) throws Exception {
         //Desactiver Cross Site Request Forgery (CSFR)
@@ -47,13 +48,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
         //.antMatchers("/espace_perso").permitAll()  //ici on autorise tout le monde � y acc�der meme pas connect�
         //.antMatchers("/espace_perso").authenticated() //renvoit sur la page d'authentification quand on rentre l'url
-        .antMatchers( "/", "/accueil", "/login" ).permitAll()  //ici on autorise tout le monde � y acc�der meme pas connect�
-                .antMatchers( "/user/**", "/user/**" ).access( "hasRole('USER')" ) //seulement ADMIN
-                .antMatchers( "/espace_utilisateur" ).access( "hasRole('ADMIN')" ) //Ne peuvent y acc�der que les utilisateurs avec leur role
-                .antMatchers( "/admin/**", "/lister" ).access( "hasRole('ADMIN')" ) //seulement ADMIN
-                .antMatchers( "/admin_dashboard/**", "/newuser" ).access( "hasRole('ADMIN')" ) //seulement ADMIN
-                //.antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
-                .antMatchers( "/db/**" ).access( "hasRole('ADMIN') or hasRole('DBA')" ) //etre ADMIN ou DBA
-                .and().formLogin().loginPage( "/login" ).usernameParameter( "ssoId" ).passwordParameter( "password" ).and().csrf().and().exceptionHandling().accessDeniedPage( "/erreur_403" );
+                .antMatchers( "/", "/accueil", "/login" ).permitAll()  //ici on autorise tout le monde � y acc�der meme pas connect�
+        .antMatchers( "/user/**", "/user/**" ).access( "hasRole('USER')" ) //seulement ADMIN
+        .antMatchers( "/espace_utilisateur" ).access( "hasRole('ADMIN')" ) //Ne peuvent y acc�der que les utilisateurs avec leur role
+        .antMatchers( "/admin/**", "/lister" ).access( "hasRole('ADMIN')" ) //seulement ADMIN
+        .antMatchers( "/admin_dashboard/**", "/newuser" ).access( "hasRole('ADMIN')" ) //seulement ADMIN
+        //.antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
+        .antMatchers( "/db/**" ).access( "hasRole('ADMIN') or hasRole('DBA')" ) //etre ADMIN ou DBA
+        .and().formLogin().loginPage( "/login" ).usernameParameter( "ssoId" ).passwordParameter( "password" ).and().csrf().and().exceptionHandling().accessDeniedPage( "/erreur_403" );
     }
 }

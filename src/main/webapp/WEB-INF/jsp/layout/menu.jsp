@@ -213,7 +213,7 @@
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href='<c:url value="/user/profil" />'><i class="fa fa-user fa-fw"></i> Profil</a>
+                        <li><a href='<c:url value="/profil" />'><i class="fa fa-user fa-fw"></i> Profil</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
@@ -242,13 +242,13 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href='<c:url value="/user_dashboard" />'><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href='<c:url value="/espace_personnel" />'><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Map<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href='<c:url value="/users/map" />'>Afficher</a>
+                                    <a href='<c:url value="/map" />'>Afficher</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Morris.js Charts</a>

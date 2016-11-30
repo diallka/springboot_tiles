@@ -1,7 +1,5 @@
 package com.springboot.controller;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -10,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.springboot.dao.ProfileUserDaoInt;
 import com.springboot.dao.UserDaoInt;
 import com.springboot.model.User;
 import com.springboot.service.UserService;
@@ -19,14 +18,23 @@ import com.springboot.service.UserService;
 public class HomeController {
 
     @Autowired
-    private UserService uService;
+    private UserService       uService;
 
     @Autowired
-    private UserDaoInt  dao;
+    private UserDaoInt        dao;
 
+    @Autowired
+    private ProfileUserDaoInt daoProfile;
+
+    //    @RequestMapping( value = { "/", "/home" } )
+    //    public String welcome( final Map< String , Object > model , final Model m ) {
+    //        m.addAttribute( "profiles", m.addAttribute( this.daoProfile.findAll() ) );
+    //        model.put( "message", "Bienvenue Spring boot et tiles ..." );
+    //        return "home";
+    //    }
     @RequestMapping( value = { "/", "/home" } )
-    public String welcome( final Map< String , Object > model ) {
-        model.put( "message", "Bienvenue Spring boot et tiles ..." );
+    public String welcome( final Model m ) {
+        m.addAttribute( "profiles", m.addAttribute( this.daoProfile.findAll() ) );
         return "home";
     }
 
@@ -58,6 +66,18 @@ public class HomeController {
         return "espace_personnel";
     }
 
+    @RequestMapping( value = "/profil" , method = RequestMethod.GET )
+    public String profil() {
+        return "profil";
+    }
+
+    //map*******************************************************
+    @RequestMapping( value = "/map" , method = RequestMethod.GET )
+    public String afficherMap() {
+        return "map";
+    }
+
+    //---------------------------------------------------------
     @RequestMapping( "/tests" )
     public String test( final Model m ) {
         m.addAttribute( "utilisateurs", this.dao.findUsers() );

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.springboot.model.ProfilUser;
 
-public interface ProfilUserDao {
+public interface ProfileUserDaoInt {
 
     List< ProfilUser > findAll();
 

@@ -1,10 +1,8 @@
 package com.springboot.config.web;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
@@ -13,10 +11,9 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 
 import com.springboot.config.profile.ConversionRoleProfilUser;
 
-@SpringBootApplication
-@EnableWebMvc
 @Configuration
-@ComponentScan( basePackages = "com.springboot" )
+//@ComponentScan( basePackages = "com.springboot" )
+@ComponentScan( basePackages = "com.springboot.controller" )
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     //@Autowired
